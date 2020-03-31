@@ -66,13 +66,13 @@ index = order(emt.net.ranking, decreasing = T)
 emt.net.ranking= emt.net.ranking[index]
 emt.net.ranking=emt.net.ranking/sum(emt.net.ranking) 
 
-###3.4 integrative method
+# Step 4. integrative method
 vim.ranking = geneRank(mad.ranking,vim.sdes.ranking,vim.net.ranking,a1 = 0.2,a2 = 0.5,a3 = 0.3)
 emt.ranking = geneRank(mad.ranking,emt.sdes.ranking,emt.net.ranking,a1 = 0,a2 = 0.4,a3 = 0.6)
 
-# Step 4. Cancer prognosis
+# Step 5. Cancer prognosis
 #
-####4.1 test the top 50 genes in single method
+####5.1 test the top 50 genes in single method
 res = benchdb(mad.ranking)
 res = cbind(res, benchdb(vim.sdes.ranking))
 res = cbind(res, benchdb(vim.net.ranking))
@@ -80,7 +80,7 @@ res = cbind(res, benchdb(emt.sdes.ranking))
 res = cbind(res, benchdb(emt.net.ranking))
 write.csv(res, file = "res.csv")
 
-###4.2 Optimized parameters by grid search
+###5.2 Optimized parameters by grid search
 
 vim.res = grid.search(mad.ranking,vim.sdes.ranking,vim.net.ranking)
 save(vim.res, file = "vim.res.rda")
@@ -151,7 +151,7 @@ write.csv(A, file = "Top50.csv")
 benchstepwise(mad.ranking,vim.sdes.ranking,vim.net.ranking,params1[vim.ci.max.id,])
 benchstepwise(mad.ranking,emt.sdes.ranking,emt.net.ranking,params1[emt.hr.max.id,])
 
-###4.3 Independent test based on the breast cancer signatures
+###5.3 Independent test based on the breast cancer signatures
 ###The identified signatures based on METABRIC dataset
 A = NULL
 for(i in 1:100) {
@@ -173,5 +173,5 @@ indepTest1(Endo)
 indepTest1(LM)
 
 
-#Step 5. Downsteam analysis
+###Step 5.4 Downsteam analysis
 source("./R/DownstreamAnalysis.R")
