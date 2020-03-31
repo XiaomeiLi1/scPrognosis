@@ -11,17 +11,26 @@ This repository includes the scripts and data of the proposed method.
 
 The scripts are in the R folder and include:
 
-- benchdb.R - Main script for the method
-- benchstepwise.R
-- buildNet.R
-- dataForWanderlust.R
-- DownstreamAnalysis.R
-- geneRank.R
-- getPseudotime.R
-- grid.search.R
-- indepTest.R
-- main.R - Main script for the method
-- survModels.R
-- utils.R
+- benchdb.R - Script for batch runing on the datasets
+- benchstepwise.R - Script for stepwise Cox model (forward)
+- buildNet.R - Script for building dynamic gene co-express network
+- dataForWanderlust.R - Script for preparing data for the Wanderlust method
+- DownstreamAnalysis.R - Script for GO enrichment analysis and KEGG pathway enrichment analysis
+- geneRank.R - Script for obtaining gene rank based on the integrative model
+- getPseudotime.R - Script for getting the normalized pseudotime
+- grid.search.R - Script for search parameters of the integrative model
+- indepTest.R - Script for independent tests
+- main.R - Main script for the proposed method
+- survModels.R - Script for wraped survival model
+- utils.R - Script for other support functions
 
-This site was built using [GitHub Pages](https://pages.github.com/).
+The data are in the Data folder and include:
+- EMTmarkers.rda - EMT gene markers
+- README.txt - Deascription of data
+- Benchmark.signatures.rda - The gene signatures of six benchmark methods
+- pseudoTime.rda - VIM-time and EMT-time used in the paper
+- seed.rda - The seeds used in the experiment to repreduce the results
+
+Notes:
+(1) The public data need to be download from [GEO Pages](https://www.ncbi.nlm.nih.gov/geo/), [EMBL-EBI Pages](https://www.ebi.ac.uk/ega/), and [Firebrowse Pages](http://firebrowse.org/) before runing the scripts. More details can be found in the manuscript.
+(2) The source code of Wanderlust can be download from http://www.c2b2.columbia.edu/danapeerlab/html/wanderlust.html.
