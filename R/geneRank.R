@@ -12,3 +12,10 @@ geneRank <- function(ranking1 = NULL, ranking2 = NULL, ranking3 = NULL, a1 = 1,
   res = res[order(res, decreasing = T)]
   res
 }
+
+getRank <- function(ranking = NULL, gn = NULL){
+  if (gn %in% names(ranking)) {
+    return(ranking[gn])
+  }
+  else return(0.0)
+}
