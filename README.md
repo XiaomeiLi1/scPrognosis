@@ -7,4 +7,20 @@
 3. School of Medicine, Discipline of Medicine, University of Adelaide, SA, Australia
 4. Institute of Intelligent Machines, Hefei Institutes of Physical Science, Chinese Academy of Sciences, Hefei, 230031, China
 
+This repository includes the scripts and data of the proposed method. 
+
+The scripts are in the R folder and include:
+benchdb.R - Main script for the method
+benchstepwise.R
+buildNet.R
+dataForWanderlust.R
+DownstreamAnalysis.R
+geneRank.R
+getPseudotime.R
+grid.search.R
+indepTest.R
+main.R - Main script for the method
+survModels.R
+utils.R
+
 This site was built using [GitHub Pages](https://pages.github.com/).
