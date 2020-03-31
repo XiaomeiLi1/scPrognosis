@@ -33,4 +33,5 @@ The data are in the Data folder and include:
 
 Notes:
 (1) The public data need to be download from [GEO Pages](https://www.ncbi.nlm.nih.gov/geo/), [EMBL-EBI Pages](https://www.ebi.ac.uk/ega/), and [Firebrowse Pages](http://firebrowse.org/) before runing the scripts. More details can be found in the manuscript.
+
 (2) The source code of Wanderlust can be download from http://www.c2b2.columbia.edu/danapeerlab/html/wanderlust.html.
