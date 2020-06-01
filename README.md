@@ -33,7 +33,7 @@ The input data are in the data folder and include:
 
 The output data are in the output folder and include:
 - Output R files of scPrognosis and benchmark methods
-- Overlap of signatures of breast cancer prognosis
+- Overlap of signatures for breast cancer prognosis
 - The grid-search results of scPrognosis
 
 Notes:
