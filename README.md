@@ -24,14 +24,14 @@ The scripts are in the R folder and include:
 - survModels.R - Script for wraped survival model
 - utils.R - Script for other support functions
 
-The data are in the data folder and include:
+The input data are in the data folder and include:
 - EMTmarkers.rda - EMT gene markers
 - README.txt - Deascription of data
 - Benchmark.signatures.rda - The gene signatures of six benchmark methods
 - pseudoTime.rda - VIM-time and EMT-time used in the paper
 - seed.rda - The seeds used in the experiment to repreduce the results
 
-The data are in the output folder and include:
+The output data are in the output folder and include:
 - Output R files of scPrognosis and benchmark methods
 - Overlap of signatures of breast cancer prognosis
 - The grid-search results of scPrognosis
