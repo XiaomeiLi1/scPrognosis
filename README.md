@@ -31,6 +31,11 @@ The data are in the data folder and include:
 - pseudoTime.rda - VIM-time and EMT-time used in the paper
 - seed.rda - The seeds used in the experiment to repreduce the results
 
+The data are in the output folder and include:
+- Output R files of scPrognosis and benchmark methods
+- Overlap of signatures of breast cancer prognosis
+- The grid-search results of scPrognosis
+
 Notes:
 
 (1) The public data need to be download from [GEO Pages](https://www.ncbi.nlm.nih.gov/geo/), [EMBL-EBI Pages](https://www.ebi.ac.uk/ega/), and [Firebrowse Pages](http://firebrowse.org/) before runing the scripts. More details can be found in the manuscript.
