@@ -38,7 +38,7 @@ The output data are in the output folder and include:
 
 Notes:
 
-(1) The public data need to be download from [GEO Pages](https://www.ncbi.nlm.nih.gov/geo/), [EMBL-EBI Pages](https://www.ebi.ac.uk/ega/), and [Firebrowse Pages](http://firebrowse.org/) before runing the scripts. And the single cell data (GSE114397), GEO, TCGA753, UK can be also downloaded from the following links. The METABRIC data need download from the EMBL-EBI repository (Accession number EGAS00000000083, approval needed).
+(1) The public data need to be download from [GEO Pages](https://www.ncbi.nlm.nih.gov/geo/), [EMBL-EBI Pages](https://www.ebi.ac.uk/ega/), and [Firebrowse Pages](http://firebrowse.org/) before runing the scripts. And the single cell data (GSE114397), GEO, TCGA753, UK can be also downloaded from the following links. The METABRIC data need download from the EMBL-EBI repository (Accession number EGAS00000000083, require individual access agreement).
 
 GSE114397: https://drive.google.com/file/d/1UEdLTsfAqiYuoIQ8pdASnbGfDe3H99Wv/view?usp=sharing
 
