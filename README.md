@@ -38,6 +38,10 @@ The output data are in the output folder and include:
 
 Notes:
 
-(1) The public data need to be download from [GEO Pages](https://www.ncbi.nlm.nih.gov/geo/), [EMBL-EBI Pages](https://www.ebi.ac.uk/ega/), and [Firebrowse Pages](http://firebrowse.org/) before runing the scripts. And the single cell data (GSE114397), GEO, TCGA753, UK can be also downloaded from the following links. More details can be found in the manuscript.
+(1) The public data need to be download from [GEO Pages](https://www.ncbi.nlm.nih.gov/geo/), [EMBL-EBI Pages](https://www.ebi.ac.uk/ega/), and [Firebrowse Pages](http://firebrowse.org/) before runing the scripts. And the single cell data (GSE114397), GEO, TCGA753, UK can be also downloaded from the following links. The METABRIC data need download from the EMBL-EBI repository (Accession number EGAS00000000083, approval needed).
+GSE114397: https://drive.google.com/file/d/1UEdLTsfAqiYuoIQ8pdASnbGfDe3H99Wv/view?usp=sharing
+GEO: https://drive.google.com/file/d/1hNmetZgFLNRPL8JtT5UsJdEFUbLyThE5/view?usp=sharing
+TCGA753: https://drive.google.com/file/d/184_yMMHc9KgDg7dHiA0hj639Vrs-iNs2/view?usp=sharing
+UK: https://drive.google.com/file/d/1qBBh9KLhcn2OUpZfCtjuTOpefaMFbL6f/view?usp=sharing
 
 (2) The source code of Wanderlust can be downloaded from http://www.c2b2.columbia.edu/danapeerlab/html/wanderlust.html.
