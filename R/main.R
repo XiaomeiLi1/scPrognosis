@@ -84,50 +84,11 @@ write.csv(res, file = "res.csv")
 
 vim.res = grid.search(mad.ranking,vim.sdes.ranking,vim.net.ranking)
 save(vim.res, file = "vim.res.rda")
-index = which(seq(ncol(vim.res)) %% 2 == 0)
-vim.hr = vim.res[, index]
-vim.hr.max <- apply(vim.hr, 1, max)
-vim.hr.max.id = max.col(vim.hr, "first")
-vim.ci = vim.res[, -index]
-vim.ci.max = apply(vim.ci, 1, max)
-vim.ci.max.id = max.col(vim.ci, "first")
 
 emt.res = grid.search(mad.ranking,emt.sdes.ranking,emt.net.ranking)
 save(emt.res, file = "emt.res.rda")
-emt.hr = emt.res[, index]
-hr.max <- apply(emt.hr, 1, max)
-emt.hr.max.id = max.col(emt.hr, "first")
-emt.ci = emt.res[, -index]
-ci.max = apply(emt.ci, 1, max)
-emt.ci.max.id = max.col(emt.ci, "first")
 
-params = matrix(data = NA, nrow = 11*11, ncol = 2)
-colnames(params) = c("a1","a2")
-i = 1
-for(a1 in seq(0.0,1.0,0.1)){
-  for(a2 in seq(0.0,1.0,0.1)){
-    params[i,"a1"] = signif(a1, digits=2)
-    params[i,"a2"] = signif(a2, digits=2)
-    i = i + 1
-  }
-}
-
-params1 = matrix(data = NA, nrow = 11*6, ncol = 2)
-colnames(params1) = c("a1","a2")
-i = 1
-for(a1 in seq(0.0,1.0,0.1)){
-  for(a2 in seq(0.0,1.0-a1,0.1)){
-    params1[i,"a1"] = signif(a1, digits=2)
-    params1[i,"a2"] = signif(a2, digits=2)
-    i = i + 1
-  }
-}
-
-index = NULL
-for(i in 1:nrow(params1)) {
-  index = c(index, which(apply(params, 1, function(x) all(params1[i,] == x))))
-}
-length(index)
+index = seq(ncol(vim.res))
 
 vim.hr = vim.hr[,index]
 A = apply(vim.hr, 1, max)
@@ -154,12 +115,12 @@ benchstepwise(mad.ranking,emt.sdes.ranking,emt.net.ranking,params1[emt.hr.max.id
 ###5.3 Independent test based on the breast cancer signatures
 ###The identified signatures based on METABRIC dataset
 A = NULL
-for(i in 1:100) {
+for(i in 1:60) {
   A = rbind(A,indepTest1(names(vim.ranking)[1:i]))
 }
 # 
 B = NULL
-for(i in 1:100) {
+for(i in 1:60) {
   print(i)
   B = rbind(B,indepTest1(names(emt.ranking)[1:i]))
 }
