@@ -5,3 +5,4 @@ benchmark.signatures: the gene signatures of six benchmark methods
 GEO_sampleID: the sample ID for GEO data
 UK_sampleID: the sample ID for UK data
 TCGA753_sampleID: the sample ID for TCGA753 data
+GSE114397_mRNA: the short name of mRNA in GSE114397 data
