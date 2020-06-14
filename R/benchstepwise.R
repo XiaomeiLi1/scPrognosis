@@ -1,13 +1,12 @@
 benchstepwise <- function(ranking1 = NULL, ranking2 = NULL, ranking3 = NULL, params = NULL) {
   i = 1
-  load("/home/xiaomei/Topic1/data/TCGA753.rda")
   pd = survival_data[,c(5,7)] # os
   a1 = params[i,"a1"]
   a2 = params[i,"a2"]
   a3 = 1 - (a1+a2)
   ranking = geneRank(ranking1, ranking2, ranking3,a1,a2,a3)
   A = NULL
-  for(N in 1:100) {
+  for(N in 1:60) {
     print(N)
     tryCatch({
       A = rbind(A,run_topN(mRNA = RNASeq_data, pd = pd, ranking = ranking, N = N))
@@ -22,7 +21,7 @@ benchstepwise <- function(ranking1 = NULL, ranking2 = NULL, ranking3 = NULL, par
   a3 = 1 - (a1+a2)
   ranking = geneRank(ranking1, ranking2, ranking3,a1,a2,a3)
   A = NULL
-  for(N in 1:100) {
+  for(N in 1:60) {
     print(N)
     tryCatch({
       A = rbind(A,run_topN(mRNA = RNASeq_data, pd = pd, ranking = ranking, N = N))
@@ -41,7 +40,7 @@ benchstepwise <- function(ranking1 = NULL, ranking2 = NULL, ranking3 = NULL, par
   a3 = 1 - (a1+a2)
   ranking = geneRank(ranking1, ranking2, ranking3,a1,a2,a3)
   A = NULL
-  for(N in 1:100) {
+  for(N in 1:60) {
     print(N)
     tryCatch({
       A = rbind(A,run_topN(mRNA = exprs(METABRIC), pd = pd, ranking = ranking, N = N))
@@ -57,7 +56,7 @@ benchstepwise <- function(ranking1 = NULL, ranking2 = NULL, ranking3 = NULL, par
   a3 = 1 - (a1+a2)
   ranking = geneRank(ranking1, ranking2, ranking3,a1,a2,a3)
   A = NULL
-  for(N in 1:100) {
+  for(N in 1:60) {
     print(N)
     tryCatch({
       A = rbind(A,run_topN(mRNA = exprs(METABRIC), pd = pd, ranking = ranking, N = N))
@@ -75,7 +74,7 @@ benchstepwise <- function(ranking1 = NULL, ranking2 = NULL, ranking3 = NULL, par
   a3 = 1 - (a1+a2)
   ranking = geneRank(ranking1, ranking2, ranking3,a1,a2,a3)
   A = NULL
-  for(N in 1:100) {
+  for(N in 1:60) {
     print(N)
     tryCatch({
       A = rbind(A,run_topN(mRNA = exprs(GEO), pd = pd, ranking = ranking, N = N))
@@ -92,7 +91,7 @@ benchstepwise <- function(ranking1 = NULL, ranking2 = NULL, ranking3 = NULL, par
   a3 = 1 - (a1+a2)
   ranking = geneRank(ranking1, ranking2, ranking3,a1,a2,a3)
   A = NULL
-  for(N in 1:100) {
+  for(N in 1:60) {
     print(N)
     tryCatch({
       A = rbind(A,run_topN(mRNA = exprs(UK), pd = pd, ranking = ranking, N = N))
