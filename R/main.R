@@ -114,7 +114,7 @@ for(a1 in seq(0.0,1.0,0.1)){
 
 # Optimized parameter N
 benchstepwise(mad.ranking,vim.sdes.ranking,vim.net.ranking,params[vim.ci.max.id,])
-benchstepwise(mad.ranking,emt.sdes.ranking,emt.net.ranking,params[emt.hr.max.id,])
+benchstepwise(mad.ranking,emt.sdes.ranking,emt.net.ranking,params[emt.ci.max.id,])
 
 ###5.3 Independent test based on the breast cancer signatures
 ##The identified signatures based on METABRIC dataset
