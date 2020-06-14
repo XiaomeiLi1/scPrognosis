@@ -68,7 +68,7 @@ emt.net.ranking=emt.net.ranking/sum(emt.net.ranking)
 
 # Step 4. integrative method
 vim.ranking = geneRank(mad.ranking,vim.sdes.ranking,vim.net.ranking,a1 = 0.2,a2 = 0.5,a3 = 0.3)
-emt.ranking = geneRank(mad.ranking,emt.sdes.ranking,emt.net.ranking,a1 = 0,a2 = 0.4,a3 = 0.6)
+emt.ranking = geneRank(mad.ranking,emt.sdes.ranking,emt.net.ranking,a1 = 0.4,a2 = 0.2,a3 = 0.2)
 
 # Step 5. Cancer prognosis
 #
@@ -101,24 +101,26 @@ emt.ci = emt.res[, -index]
 ci.max = apply(emt.ci, 1, max)
 emt.ci.max.id = max.col(emt.ci, "first")
 
+params = matrix(data = NA, nrow = 11*6, ncol = 2)
+colnames(params) = c("a1","a2")
+i = 1
+for(a1 in seq(0.0,1.0,0.1)){
+  for(a2 in seq(0.0,1.0-a1,0.1)){
+    params[i,"a1"] = signif(a1, digits=2)
+    params[i,"a2"] = signif(a2, digits=2)
+    i = i + 1
+  }
+}
+
 # Optimized parameter N
-benchstepwise(mad.ranking,vim.sdes.ranking,vim.net.ranking,params1[vim.ci.max.id,])
-benchstepwise(mad.ranking,emt.sdes.ranking,emt.net.ranking,params1[emt.hr.max.id,])
+benchstepwise(mad.ranking,vim.sdes.ranking,vim.net.ranking,params[vim.ci.max.id,])
+benchstepwise(mad.ranking,emt.sdes.ranking,emt.net.ranking,params[emt.hr.max.id,])
 
 ###5.3 Independent test based on the breast cancer signatures
-###The identified signatures based on METABRIC dataset
-A = NULL
-for(i in 1:60) {
-  A = rbind(A,indepTest1(names(vim.ranking)[1:i]))
-}
-# 
-B = NULL
-for(i in 1:60) {
-  print(i)
-  B = rbind(B,indepTest1(names(emt.ranking)[1:i]))
-}
-# 
-###The benchmark methods
+##The identified signatures based on METABRIC dataset
+indepTest1(names(emt.ranking)[1:10])
+
+##The benchmark methods
 indepTest1(PAM50)
 indepTest1(Mamma)
 indepTest1(RS)
