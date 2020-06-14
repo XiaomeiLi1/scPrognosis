@@ -84,29 +84,22 @@ write.csv(res, file = "res.csv")
 
 vim.res = grid.search(mad.ranking,vim.sdes.ranking,vim.net.ranking)
 save(vim.res, file = "vim.res.rda")
+index = which(seq(ncol(vim.res)) %% 2 == 0)
+vim.hr = vim.res[, index]
+vim.hr.max <- apply(vim.hr, 1, max)
+vim.hr.max.id = max.col(vim.hr, "first")
+vim.ci = vim.res[, -index]
+vim.ci.max = apply(vim.ci, 1, max)
+vim.ci.max.id = max.col(vim.ci, "first")
 
 emt.res = grid.search(mad.ranking,emt.sdes.ranking,emt.net.ranking)
 save(emt.res, file = "emt.res.rda")
-
-index = seq(ncol(vim.res))
-
-vim.hr = vim.hr[,index]
-A = apply(vim.hr, 1, max)
-vim.hr.max.id = max.col(vim.hr, "first")
-
-emt.hr = emt.hr[,index]
-A =  rbind(A,apply(emt.hr, 1, max))
+emt.hr = emt.res[, index]
+hr.max <- apply(emt.hr, 1, max)
 emt.hr.max.id = max.col(emt.hr, "first")
-
-vim.ci = vim.ci[,index]
-A =  rbind(A,apply(vim.ci, 1, max))
-vim.ci.max.id = max.col(vim.ci, "first")
-
-emt.ci = emt.ci[,index]
-A =  rbind(A,apply(emt.ci, 1, max))
+emt.ci = emt.res[, -index]
+ci.max = apply(emt.ci, 1, max)
 emt.ci.max.id = max.col(emt.ci, "first")
-
-write.csv(A, file = "Top50.csv")
 
 # Optimized parameter N
 benchstepwise(mad.ranking,vim.sdes.ranking,vim.net.ranking,params1[vim.ci.max.id,])
@@ -125,7 +118,7 @@ for(i in 1:60) {
   B = rbind(B,indepTest1(names(emt.ranking)[1:i]))
 }
 # 
-###The benchmark method
+###The benchmark methods
 indepTest1(PAM50)
 indepTest1(Mamma)
 indepTest1(RS)
