@@ -1,6 +1,4 @@
 benchdb <- function(ranking = NULL) {
-  #print(ranking[1:10])
-  load("/home/xiaomei/Topic1/data/TCGA753.rda")
   pd = survival_data[,c(5,7)] # os
   A = run_topN(mRNA = RNASeq_data, pd = pd, ranking = ranking)
   
