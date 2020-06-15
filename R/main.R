@@ -81,7 +81,6 @@ res = cbind(res, benchdb(emt.net.ranking))
 write.csv(res, file = "res.csv")
 
 ###5.2 Optimized parameters by grid search
-
 vim.res = grid.search(mad.ranking,vim.sdes.ranking,vim.net.ranking)
 save(vim.res, file = "vim.res.rda")
 index = which(seq(ncol(vim.res)) %% 2 == 0)
