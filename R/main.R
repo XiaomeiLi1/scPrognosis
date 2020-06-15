@@ -84,19 +84,19 @@ write.csv(res, file = "res.csv")
 vim.res = grid.search(mad.ranking,vim.sdes.ranking,vim.net.ranking)
 save(vim.res, file = "vim.res.rda")
 index = which(seq(ncol(vim.res)) %% 2 == 0)
-vim.hr = vim.res[, index]
+vim.hr = vim.res[2, index]
 vim.hr.max <- apply(vim.hr, 1, max)
 vim.hr.max.id = max.col(vim.hr, "first")
-vim.ci = vim.res[, -index]
+vim.ci = vim.res[2, -index]
 vim.ci.max = apply(vim.ci, 1, max)
 vim.ci.max.id = max.col(vim.ci, "first")
 
 emt.res = grid.search(mad.ranking,emt.sdes.ranking,emt.net.ranking)
 save(emt.res, file = "emt.res.rda")
-emt.hr = emt.res[, index]
+emt.hr = emt.res[2, index]
 hr.max <- apply(emt.hr, 1, max)
 emt.hr.max.id = max.col(emt.hr, "first")
-emt.ci = emt.res[, -index]
+emt.ci = emt.res[2, -index]
 ci.max = apply(emt.ci, 1, max)
 emt.ci.max.id = max.col(emt.ci, "first")
 
