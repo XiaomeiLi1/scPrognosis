@@ -38,6 +38,8 @@ The output data are in the output folder and include:
 
 Notes:
 
-(1) The single-cell data (GSE114397), GEO, TCGA753, UK can be downloaded from the link(https://github.com/XiaomeiLi1/scPrognosis/releases/tag/V1.0.1). The METABRIC data need to be download from the EMBL-EBI repository (https://www.ebi.ac.uk/ega/, accession number EGAS00000000083, require individual access agreement).
+(1) The single-cell data GSE114397 is too big to upload here. You might need to download it from https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114397. Then ncRNA profiles need to be removed from this dataset. The selected mRNA short names are provided in the file data/GSE114397_mRNA.csv.
+
+(2) GEO, TCGA753, UK can be downloaded from the link(https://github.com/XiaomeiLi1/scPrognosis/releases/tag/V1.0.1). The METABRIC data need to be download from the EMBL-EBI repository (https://www.ebi.ac.uk/ega/, accession number EGAS00000000083, require individual access agreement).
 
 (2) The source code of Wanderlust can be downloaded from http://www.c2b2.columbia.edu/danapeerlab/html/wanderlust.html.
